@@ -17,6 +17,16 @@ This principle is so important to understand. The premise — eliminating the ne
 
 The purpose of the Page Object Model is to encapsulate a web page entirely in your application in a single class file. Each page of the application would be mapped to a class file, and each method within the class represents a page object. The object hides multiple technical details about the interaction with the page; for the most part, it creates a reusable object that can be used with any test. It merely helps Selenium code to be more readable, maintainable, and reusable. It is important to keep page objects modular and independent. How would a page object look for a login page? To create a page object, we first need to understand the page to create an abstraction layer of it.
 
+Advantages :
+* Code becomes modular
+* Code becomes reusable (ex SigninPage methods are used in most of test classes)
+* When any locator changes, refactoring is needed only in its page class
+
+Disadvantages :
+* Complexity increases (framework needs to be created)
+* Time consuming
+
+
 ## Locator Strategy
 
 Locators are the lifeblood of your Selenium tests. The Selenium web driver uses locators to find the elements on web pages. The most efficient way (and preferred way) to locate an element on a web page is to use unique IDs. When there is no ID to use, the next preferred choices are NAME and CSS locators. The only problem with using NAME and CSS locators is that sometimes a page may contain multiple elements with the same name. Why is this a problem? It’s a problem because Selenium is designed to find the first matching element on the page. To find the second or third element on the page, many need to use one of the other types of locators: Link Text, Partial Link Text, Tag Name, Class Name, Attributes, Datasets, and XPATH. The XPATH locator should only be used as the last resort to find an element on web pages. The key is to have a clear locator strategy with developers. The conversation outlines your preferred locator for automated tests and the importance of creating unique locators.
@@ -35,6 +45,35 @@ It starts by developing automated tests to be small and modular (independent), w
 Continuous Integration (eliminate the human factor from the equation)
 Ability to run hundreds of tests in parallel (check out my blog post to learn about ‘The Benefits of Parallel Testing’.)
 
+## BDD pattern :
+BDD (Behaviour Driven Development) is an agile testing methodology.
+
+Advantages :
+* It encourages collaboration between business users, developers and testers.
+* At its heart, BDD has parameterisation and data tables built in.
+* Feature files are written in Gherkin language which is quite simple to read & understand by everyone in the team
+
+
+Disadvantages :
+* Time Overhead
+* Structuring all your feature files, scenarios and executable specifications requires some careful planning.
+* Good communication is required between the person writing the feature files and the person developing the automation code
+
+
+## Hermetic test pattern :
+
+It states that each test should be completely independent and self-sufficient. Any dependency on other tests or third-party services that cannot be controlled should be avoided.
+
+Advantages :
+* Modular tests
+* No tests skip in case any prior test fails
+* Tests can be run in random order
+* Can run tests in parallel
+
+
+Disadvantages :
+* Time required to write tests increases
+* Runtime increases as env setup needs to be done before every test. *Designing of test cases take time as test can’t reuse data from other tests
 
 
 
