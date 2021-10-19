@@ -23,8 +23,8 @@ Locators are the lifeblood of your Selenium tests. The Selenium web driver uses 
 
 Resource:
 
-How to Verify Your Locators Without Selenium by Dave Haeffner
-Choosing a Locator Strategy by Dave Haeffner
+[How to Verify Your Locators Without Selenium](http://elementalselenium.com/tips/verifying-locators) by Dave Haeffner
+[Choosing a Locator Strategy](http://elementalselenium.com/tips/22-locator-strategy) by Dave Haeffner
 
 ## Design for Scalability
 
